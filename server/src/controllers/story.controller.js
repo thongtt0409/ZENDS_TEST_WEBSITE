@@ -29,7 +29,7 @@ const likeStory = async (req, res, next) => {
     const likeStory = await Story.findByIdAndUpdate(
       req.params.id,
       {
-        $inc: { like: +1 },
+        like: req.sessionID,
       },
       {
         new: true,
@@ -48,7 +48,7 @@ const unLikeStory = async (req, res, next) => {
   const UnlLikeStory = await Story.findByIdAndUpdate(
     req.params.id,
     {
-      $inc: { unlike: +1 },
+      unlike: req.sessionID,
     },
     {
       new: true,

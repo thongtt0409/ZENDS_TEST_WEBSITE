@@ -8,6 +8,8 @@
 .header {
   max-height: 100px;
   min-height: 100px;
+  max-width: 982px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -91,6 +93,7 @@ section {
 .item-1 p {
   color: #696969;
   font-size: 19.6px;
+  line-height: 30px;
 }
 hr {
   border: 0.1px #cdcdcd solid;
@@ -147,16 +150,15 @@ hr {
   max-width: 960px;
   margin: 0 auto;
   line-height: 25px;
-  font-size: 15.5px;
+  font-size: 14px;
   color: #a1a1a1;
   font-family: Arial, sans-serif;
   padding-top: 40px;
-  padding-bottom: 30px;
 }
 .footer .copyright {
   text-align: center;
   padding-top: 16px;
-  font-size: 17px;
+  font-size: 16px;
   color: #656565;
   font-family: Arial, sans-serif;
 }

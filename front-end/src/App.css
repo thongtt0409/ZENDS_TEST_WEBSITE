@@ -160,6 +160,20 @@ hr {
   color: #656565;
   font-family: Arial, sans-serif;
 }
+.disabled {
+  cursor: not-allowed;
+  align-items: center;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 17px;
+  font-family: Arial, sans-serif;
+  width: 230px;
+  min-height: 50px;
+}
 
 @media (max-width: 1200px) {
   .header {
@@ -190,12 +204,6 @@ hr {
 @media (max-width: 500px) {
   .item-2 {
     flex-direction: column !important;
-  }
-}
-
-@media (max-width: 450px) {
-  br {
-    display: none;
   }
 }
 

@@ -6,6 +6,7 @@ const Content = () => {
   const [loading, setLoading] = useState(true);
   const [listStory, setListStory] = useState({});
   const [next, setNext] = useState(0);
+  const [disabled, setDisabled] = useState(false);
 
   useEffect(() => {
     const getAllStory = async () => {
@@ -15,6 +16,7 @@ const Content = () => {
           withCredentials: true,
         });
         setListStory(response.data);
+        if (next > listStory.length) setDisabled(true);
       } catch (error) {
         console.error(error.message);
       }
@@ -26,9 +28,13 @@ const Content = () => {
 
   const handleVoteStory = async (vote) => {
     try {
-      axios.put(`http://localhost:8081/api/story/${vote}/${listStory[next]._id}`, {
+      const response = await axios.put(`http://localhost:8081/api/story/${vote}/${listStory[next]._id}`, {
         withCredentials: true,
       });
+      if (response.data.status == 400) {
+        setDisabled(true);
+        return;
+      }
       setNext(next + 1);
     } catch (error) {
       console.log(error);
@@ -51,10 +57,18 @@ const Content = () => {
           <div className="item-2">
             {next < listStory.length && (
               <>
-                <button className="btn blue" onClick={() => handleVoteStory('like')}>
+                <button
+                  className={disabled ? 'disabled blue' : 'btn blue'}
+                  disabled={disabled}
+                  onClick={() => handleVoteStory('like')}
+                >
                   This is Funny!
                 </button>
-                <button className="btn green" onClick={() => handleVoteStory('unlike')}>
+                <button
+                  className={disabled ? 'disabled green' : 'btn green'}
+                  disabled={disabled}
+                  onClick={() => handleVoteStory('unlike')}
+                >
                   This is not funny.
                 </button>
               </>

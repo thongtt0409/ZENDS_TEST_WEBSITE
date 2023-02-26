@@ -45,19 +45,23 @@ const likeStory = async (req, res, next) => {
 };
 
 const unLikeStory = async (req, res, next) => {
-  const UnlLikeStory = await Story.findByIdAndUpdate(
-    req.params.id,
-    {
-      unlike: req.sessionID,
-    },
-    {
-      new: true,
-    }
-  );
-  res.json({
-    status: 200,
-    data: UnlLikeStory,
-  });
+  try {
+    const UnlLikeStory = await Story.findByIdAndUpdate(
+      req.params.id,
+      {
+        unlike: req.sessionID,
+      },
+      {
+        new: true,
+      }
+    );
+    res.json({
+      status: 200,
+      data: UnlLikeStory,
+    });
+  } catch (err) {
+    next(err);
+  }
 };
 
 module.exports = {

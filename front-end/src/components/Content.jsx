@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+axios.defaults.withCredentials = true;
 
 const Content = () => {
   const [loading, setLoading] = useState(true);
@@ -10,7 +11,9 @@ const Content = () => {
     const getAllStory = async () => {
       setLoading(true);
       try {
-        const { data: response } = await axios.get('http://localhost:8081/api/story/all');
+        const { data: response } = await axios.get('http://localhost:8081/api/story/all', {
+          withCredentials: true,
+        });
         setListStory(response.data);
       } catch (error) {
         console.error(error.message);
@@ -23,7 +26,9 @@ const Content = () => {
 
   const handleVoteStory = async (vote) => {
     try {
-      axios.put(`http://localhost:8081/api/story/${vote}/${listStory[next]._id}`);
+      axios.put(`http://localhost:8081/api/story/${vote}/${listStory[next]._id}`, {
+        withCredentials: true,
+      });
       setNext(next + 1);
     } catch (error) {
       console.log(error);

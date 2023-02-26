@@ -12,7 +12,12 @@ const cors = require('cors');
 
 dotenv.config();
 const PORT = process.env.PORT || 8000;
-app.use(cors({}));
+app.use(
+  cors({
+    origin: 'http://localhost:3000',
+    credentials: true,
+  })
+);
 app.use(cookieParser());
 mongoose
   .connect(process.env.MONGO_URL)
@@ -30,17 +35,13 @@ app.use(
     cookie: {
       secure: false,
       httpOnly: true,
-      maxAge: 5 * 60 * 1000,
+      maxAge: 10 * 60 * 1000,
     },
   })
 );
 app.use(function (req, res, next) {
   const session = req.session;
-  if (session.views) {
-    session.views++;
-  } else {
-    session.views = 1;
-  }
+  req.cookies.sessionID = session;
   next();
 });
 

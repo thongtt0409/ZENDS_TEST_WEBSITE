@@ -21,9 +21,9 @@ GET  http://localhost:8081/api/story/all
 Content-type: application/json
 
 ###
-PUT http://localhost:8081/api/story/like/63fa156a5584ace23bbc1319
+PUT http://localhost:8081/api/story/like/63fae9739bbbc984429bc933
 Content-type: application/json
 
 ###
-PUT http://localhost:8081/api/story/unlike/63fa156a5584ace23bbc1319
+PUT http://localhost:8081/api/story/unlike/63fae9739bbbc984429bc933
 Content-type: application/json

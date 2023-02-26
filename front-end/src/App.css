@@ -160,3 +160,47 @@ hr {
   color: #656565;
   font-family: Arial, sans-serif;
 }
+
+@media (max-width: 1200px) {
+  .header {
+    padding: 0 200px !important;
+  }
+
+  .container .content .item-1 {
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+  }
+
+  .footer .item.text {
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .header {
+    padding: 0 50px !important;
+  }
+  .box-text {
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+  }
+}
+
+@media (max-width: 500px) {
+  .item-2 {
+    flex-direction: column !important;
+  }
+}
+
+@media (max-width: 450px) {
+  br {
+    display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .back-ground {
+    height: 350px;
+  }
+}

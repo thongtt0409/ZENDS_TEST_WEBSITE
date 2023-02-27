@@ -14,6 +14,7 @@ const Content = () => {
       try {
         const { data: response } = await axios.get('http://localhost:10000/api/story/all', {
           withCredentials: true,
+          mode: 'cors',
         });
         setListStory(response.data);
         if (next > listStory.length) setDisabled(true);
@@ -30,6 +31,7 @@ const Content = () => {
     try {
       const response = await axios.put(`http://localhost:10000/api/story/${vote}/${listStory[next]._id}`, {
         withCredentials: true,
+        mode: 'cors',
       });
       if (response.data.status == 400) {
         setDisabled(true);

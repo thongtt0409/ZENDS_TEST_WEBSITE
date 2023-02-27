@@ -4,6 +4,9 @@ const app = express();
 const dotenv = require('dotenv');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
+const Redis = require('ioredis');
+const RedisStore = require('connect-redis')(session);
+const clientRedis = new Redis();
 const storyRoute = require('./src/routes/story.route');
 const cors = require('cors');
 
@@ -12,6 +15,7 @@ const PORT = process.env.PORT || 8000;
 app.use(
   cors({
     origin: '*',
+    credentials: true,
   })
 );
 app.use(cookieParser());
@@ -25,6 +29,7 @@ mongoose
 app.use(
   session({
     secret: 'keyboard cat',
+    store: new RedisStore({ client: clientRedis }),
     resave: false,
     saveUninitialized: true,
     cookie: {

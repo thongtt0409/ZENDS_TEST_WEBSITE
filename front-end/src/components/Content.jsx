@@ -12,7 +12,7 @@ const Content = () => {
     const getAllStory = async () => {
       setLoading(true);
       try {
-        const { data: response } = await axios.get('http://localhost:8081/api/story/all', {
+        const { data: response } = await axios.get('https://zenstest.onrender.com/api/story/all', {
           withCredentials: true,
         });
         setListStory(response.data);
@@ -28,9 +28,12 @@ const Content = () => {
 
   const handleVoteStory = async (vote) => {
     try {
-      const response = await axios.put(`http://localhost:8081/api/story/${vote}/${listStory[next]._id}`, {
-        withCredentials: true,
-      });
+      const response = await axios.put(
+        `https://zenstest.onrender.com/api/story/${vote}/${listStory[next]._id}`,
+        {
+          withCredentials: true,
+        }
+      );
       if (response.data.status == 400) {
         setDisabled(true);
         return;

@@ -9,7 +9,12 @@ const cors = require('cors');
 
 dotenv.config();
 const PORT = process.env.PORT || 8000;
-app.use(cors());
+app.use(
+  cors({
+    origin: 'https://63fcb721f7ebf80c79344482--stupendous-florentine-e8a8a8.netlify.app/',
+    credentials: true,
+  })
+);
 app.use(cookieParser());
 mongoose
   .connect(process.env.MONGO_URL)

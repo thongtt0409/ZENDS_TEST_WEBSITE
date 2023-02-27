@@ -113,12 +113,16 @@ const Content = () => {
           </div>
           <hr />
           <div className="item-2">
-            <button className="btn blue" onClick={handleClickDataTest}>
-              This is Funny!
-            </button>
-            <button className="btn green" onClick={handleClickDataTest}>
-              This is not funny.
-            </button>
+            {next < dataTest.length && (
+              <>
+                <button className="btn blue" onClick={handleClickDataTest}>
+                  This is Funny!
+                </button>
+                <button className="btn green" onClick={handleClickDataTest}>
+                  This is not funny.
+                </button>
+              </>
+            )}
           </div>
         </div>
       </div>

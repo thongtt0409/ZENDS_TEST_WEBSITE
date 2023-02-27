@@ -11,7 +11,7 @@ dotenv.config();
 const PORT = process.env.PORT || 8000;
 app.use(
   cors({
-    origin: 'http://localhost:3000',
+    origin: 'https://63fcda9e928bb40057ae6c82--stupendous-florentine-e8a8a8.netlify.app',
     credentials: true,
   })
 );

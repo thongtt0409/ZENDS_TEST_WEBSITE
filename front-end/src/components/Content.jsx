@@ -94,7 +94,7 @@ const Content = () => {
           <hr />
           <div className="item-2">
             <button className="btn blue">This is Funny!</button>
-            <button className="disabled green">This is not funny.</button>
+            <button className="btn green">This is not funny.</button>
           </div>
         </div>
       </div>

@@ -12,7 +12,7 @@ const Content = () => {
     const getAllStory = async () => {
       setLoading(true);
       try {
-        const { data: response } = await axios.get('http://localhost:10000/api/story/all', {
+        const { data: response } = await axios.get('http://localhost:8081/api/story/all', {
           withCredentials: true,
           mode: 'cors',
         });
@@ -29,7 +29,7 @@ const Content = () => {
 
   const handleVoteStory = async (vote) => {
     try {
-      const response = await axios.put(`http://localhost:10000/api/story/${vote}/${listStory[next]._id}`, {
+      const response = await axios.put(`http://localhost:8081/api/story/${vote}/${listStory[next]._id}`, {
         withCredentials: true,
         mode: 'cors',
       });

@@ -47,7 +47,7 @@ const Content = () => {
 
   return (
     <section>
-      <div className="container">
+      {/* <div className="container">
         <div className="content">
           <div className="item-1">
             <p>
@@ -77,6 +77,24 @@ const Content = () => {
                 </button>
               </>
             )}
+          </div>
+        </div>
+      </div> */}
+      <div className="container">
+        <div className="content">
+          <div className="item-1">
+            <p>
+              A child asked his father, "How were people born?" So his father said, "Adam and Eve made babies,
+              then their babies became adults and made babies, and so on." The child then went to his mother,
+              asked her the same question and she told him, "We were monkeys then we evolved to become like we
+              are now." The child ran back to his father and said, "You lied to me!" His father replied, "No,
+              your mom was talking about her side of the family."
+            </p>
+          </div>
+          <hr />
+          <div className="item-2">
+            <button className="btn blue">This is Funny!</button>
+            <button className="disabled green">This is not funny.</button>
           </div>
         </div>
       </div>

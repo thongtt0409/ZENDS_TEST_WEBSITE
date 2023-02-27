@@ -29,7 +29,7 @@ mongoose
 app.use(
   session({
     secret: 'keyboard cat',
-    store: new RedisStore({ client: clientRedis }),
+    // store: new RedisStore({ client: clientRedis }),
     resave: false,
     saveUninitialized: true,
     cookie: {

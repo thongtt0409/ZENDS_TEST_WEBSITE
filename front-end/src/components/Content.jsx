@@ -12,7 +12,7 @@ const Content = () => {
     const getAllStory = async () => {
       setLoading(true);
       try {
-        const { data: response } = await axios.get('http://localhost:8081/api/story/all', {
+        const { data: response } = await axios.get('https://zens-test.onrender.com/api/story/all', {
           withCredentials: true,
         });
         setListStory(response.data);

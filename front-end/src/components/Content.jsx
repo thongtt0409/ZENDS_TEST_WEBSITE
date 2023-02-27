@@ -28,10 +28,13 @@ const Content = () => {
 
   const handleVoteStory = async (vote) => {
     try {
-      const response = await axios.put(`http://localhost:8081/api/story/${vote}/${listStory[next]._id}`, {
-        mode: 'cors',
-        withCredentials: true,
-      });
+      const response = await axios.put(
+        `https://zens-test.onrender.com/api/story/${vote}/${listStory[next]._id}`,
+        {
+          mode: 'cors',
+          withCredentials: true,
+        }
+      );
       if (response.data.status == 400) {
         setDisabled(true);
         return;

@@ -11,8 +11,7 @@ dotenv.config();
 const PORT = process.env.PORT || 8000;
 app.use(
   cors({
-    origin: 'https://63fcb721f7ebf80c79344482--stupendous-florentine-e8a8a8.netlify.app/',
-    credentials: true,
+    origin: '*',
   })
 );
 app.use(cookieParser());

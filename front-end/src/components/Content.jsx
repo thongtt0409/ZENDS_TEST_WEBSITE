@@ -32,7 +32,13 @@ const Content = () => {
       try {
         const { data: response } = await axios.get('https://zens-test.onrender.com/api/story/all', {
           withCredentials: true,
-        });
+        },
+          {
+          headers:{
+                "Content-Type":"application/json"
+                }
+          }
+         );
         console.log(response.data)
         setListStory(response.data);
         if (next > listStory.length) setDisabled(true);

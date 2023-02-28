@@ -1,7 +1,6 @@
 const Story = require('../models/Story');
 
 const getAllStory = async (req, res, next) => {
-  res.setHeader("Access-Control-Allow-Credentitals","true");
   try {
     const allStory = await Story.find();
     res.json({

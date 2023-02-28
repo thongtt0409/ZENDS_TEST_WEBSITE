@@ -76,7 +76,7 @@ const Content = () => {
 
   return (
     <section>
-      {/* <div className="container">
+       <div className="container">
         <div className="content">
           <div className="item-1">
             <p>
@@ -108,31 +108,7 @@ const Content = () => {
             )}
           </div>
         </div>
-      </div> */}
-      <div className="container">
-        <div className="content">
-          <div className="item-1">
-            <p>
-              {next < dataTest.length
-                ? dataTest[next].content
-                : " That's all the jokes for today! Come back another day! "}
-            </p>
-          </div>
-          <hr />
-          <div className="item-2">
-            {next < dataTest.length && (
-              <>
-                <button className="btn blue" onClick={handleClickDataTest}>
-                  This is Funny!
-                </button>
-                <button className="btn green" onClick={handleClickDataTest}>
-                  This is not funny.
-                </button>
-              </>
-            )}
-          </div>
-        </div>
-      </div>
+      </div> 
     </section>
   );
 };

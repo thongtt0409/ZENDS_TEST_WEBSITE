@@ -29,10 +29,13 @@ app.use(
     // store: new RedisStore({ client: clientRedis }),
     resave: false,
     saveUninitialized: true,
+    proxy: true,
+    name: 'MyCoolWebAppCookieName',
     cookie: {
       secure: false,
-      httpOnly: true,
+      httpOnly: false,
       maxAge: 10 * 60 * 1000,
+      sameSite: 'none',
     },
   })
 );

@@ -9,7 +9,10 @@ const cors = require('cors');
 
 dotenv.config();
 const PORT = process.env.PORT || 8000;
-app.use(cors());
+app.use(cors({
+  origin:"https://zens-front-end.onrender.com/",
+  credentials: true
+}));
 
 app.use(cookieParser());
 mongoose

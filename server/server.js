@@ -11,7 +11,7 @@ dotenv.config();
 const PORT = process.env.PORT || 8000;
 app.set('trust proxy', 1)
 app.use(cors({
-  origin:"https://zens-front-end.onrender.com/",
+  origin:["http://localhost:3000", "https://zens-front-end.onrender.com"],
   credentials: true
 }));
 

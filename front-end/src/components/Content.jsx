@@ -33,6 +33,7 @@ const Content = () => {
         const { data: response } = await axios.get('https://zens-test.onrender.com/api/story/all', {
           withCredentials: true,
         });
+        console.log(response.data)
         setListStory(response.data);
         if (next > listStory.length) setDisabled(true);
       } catch (error) {

@@ -30,10 +30,9 @@ app.use(
     resave: false,
     saveUninitialized: true,
     proxy: true,
-    name: 'MyCoolWebAppCookieName',
     cookie: {
       secure: false,
-      httpOnly: false,
+      httpOnly: true,
       maxAge: 10 * 60 * 1000,
       sameSite: 'lax',
     },

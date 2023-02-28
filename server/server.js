@@ -9,6 +9,7 @@ const cors = require('cors');
 
 dotenv.config();
 const PORT = process.env.PORT || 8000;
+app.set('trust proxy', 1)
 app.use(cors({
   origin:"https://zens-front-end.onrender.com/",
   credentials: true
@@ -30,7 +31,7 @@ app.use(
     saveUninitialized: true,
     cookie: {
       secure: false,
-      httpOnly: false,
+      httpOnly: true,
       maxAge: 10 * 60 * 1000,
     },
   })

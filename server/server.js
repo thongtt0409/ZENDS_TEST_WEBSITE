@@ -35,6 +35,7 @@ app.use(
       httpOnly: true,
       maxAge: 10 * 60 * 1000,
       sameSite: 'lax',
+      domain: 'https://zens-front-end.onrender.com',
     },
   })
 );

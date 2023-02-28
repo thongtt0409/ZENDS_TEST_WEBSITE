@@ -35,7 +35,7 @@ app.use(
       secure: false,
       httpOnly: false,
       maxAge: 10 * 60 * 1000,
-      sameSite: 'none',
+      sameSite: 'lax',
     },
   })
 );

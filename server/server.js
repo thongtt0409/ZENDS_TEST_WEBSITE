@@ -9,15 +9,7 @@ const cors = require('cors');
 
 dotenv.config();
 const PORT = process.env.PORT || 8000;
-app.use(
-  cors({
-    origin: [
-      'https://63fcdcec60e9610098d7a611--stupendous-florentine-e8a8a8.netlify.app',
-      'http://localhost:3000',
-    ],
-    credentials: true,
-  })
-);
+app.use(cors());
 
 app.use(cookieParser());
 mongoose
